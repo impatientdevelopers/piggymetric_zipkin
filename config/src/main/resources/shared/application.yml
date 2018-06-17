@@ -1,0 +1,35 @@
+spring:
+  rabbitmq:
+    dynamic: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/piggymetrics?createDatabaseIfNotExist=true
+    username: root
+    password: null
+    driver-class-name: com.mysql.jdbc.Driver
+    continue-on-error: true
+    initialize: true
+    schema: classpath:/mysql.sql
+#    -classpath: mysql.sql
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  sleuth:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:4000/uaa/users/current

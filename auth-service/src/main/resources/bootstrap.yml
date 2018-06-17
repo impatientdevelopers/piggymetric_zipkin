@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: auth-service
+  cloud:
+    config:
+      uri: http://localhost:8888
+      fail-fast: false
+      password: jayrock007
+      username: user
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/piggymetrics?createDatabaseIfNotExist=true
+#    username: root
+#    password: fs0ci3ty
+#    driver-class-name: com.mysql.jdbc.Driver
+#  jpa:
+#    database: mysql
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+#    properties:
+#      hibernate:
+#        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+#        dialect: org.hibernate.dialect.MySQL5Dialect
